@@ -12,6 +12,7 @@
 
     <bean name="msgSender" class="pl.coderslab.beans.MessageSender">
         <constructor-arg name="messageService" ref="msgService"/>
+        <property name="message" value="Message from xml"/>
     </bean>
 
     <!--
