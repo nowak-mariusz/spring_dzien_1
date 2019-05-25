@@ -4,4 +4,24 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!--    <bean name="mariusz" class="pl.coderslab.beans.HelloWorld">-->
+    <!--        <property name="message" value="Witaj Spring -  by setter"></property>-->
+    <!--    </bean>-->
+
+    <!--    <bean name="msgService" class="pl.coderslab.beans.EmailService">-->
+    <!--    </bean>-->
+
+
+    <!--
+     - aby przerwać cykl musimy zamienić "wstrzykiwanie przez konstruktor" na "wstrzykiwanie przez setter"
+     - kolejność definicji poniższych beanów ma znaczenie!
+     -->
+    <bean name="jajko" class="pl.coderslab.beans.Jajko">
+        <property name="kura" ref="kokoszka"></property>
+    </bean>
+
+    <bean name="kokoszka" class="pl.coderslab.beans.Kura">
+        <constructor-arg ref="jajko"></constructor-arg>
+    </bean>
+
 </beans>
