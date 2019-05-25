@@ -9,11 +9,8 @@ public class SpringDiApplication {
 
         ClassPathXmlApplicationContext context = new ClassPathXmlApplicationContext("beans.xml");
 
-//        HelloWorld mariusz = context.getBean("mariusz", HelloWorld.class);
-//        mariusz.getMessage();
-//
-//        MessageService msgService = context.getBean("msgService", MessageService.class);
-//        msgService.send();
+        HelloWorld helloWorld = context.getBean("jakas_unikalna_nazwa", HelloWorld.class);
+        helloWorld.getMessage();
 
         context.close();
     }
