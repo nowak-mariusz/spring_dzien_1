@@ -10,6 +10,10 @@
 
     <bean name="msgService" class="pl.coderslab.beans.EmailService"/>
 
+    <bean name="msgSender" class="pl.coderslab.beans.MessageSender">
+        <constructor-arg name="messageService" ref="msgService"/>
+    </bean>
+
     <!--
      - aby przerwać cykl musimy zamienić "wstrzykiwanie przez konstruktor" na "wstrzykiwanie przez setter"
      - kolejność definicji poniższych beanów ma znaczenie!

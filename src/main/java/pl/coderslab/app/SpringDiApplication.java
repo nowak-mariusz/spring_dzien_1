@@ -2,6 +2,7 @@ package pl.coderslab.app;
 
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 import pl.coderslab.beans.HelloWorld;
+import pl.coderslab.beans.MessageSender;
 import pl.coderslab.beans.MessageService;
 
 public class SpringDiApplication {
@@ -15,6 +16,9 @@ public class SpringDiApplication {
         // nie EmailService! - chcemy być elastyczni (zmiana w beans.xml np. na SmsService nie powinna nas zmuszać do zmiany tej klasy)
         MessageService msgService = context.getBean("msgService", MessageService.class);
         msgService.send();
+
+        MessageSender msgSender = context.getBean("msgSender", MessageSender.class);
+        msgSender.send();
 
         context.close();
     }
